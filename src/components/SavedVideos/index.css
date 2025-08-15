@@ -1,0 +1,21 @@
+.home-light-main-container {
+  background-color: #f9f9f9;
+  display: flex;
+  flex-direction: row;
+}
+
+.home-dark-main-container {
+  background-color: #181818;
+  display: flex;
+  flex-direction: row;
+}
+
+.light-text {
+  color: #181818;
+  font-family: Roboto;
+}
+
+.dark-text {
+  color: #f9f9f9;
+  font-family: Roboto;
+}
