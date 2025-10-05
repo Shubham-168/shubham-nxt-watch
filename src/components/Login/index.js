@@ -11,35 +11,38 @@ class Login extends Component {
     showPassword: false,
   }
 
-  onSuccess = jwtToken => {
-    const {history} = this.props
-    Cookies.set('jwt_token', jwtToken, {expires: 30})
-    history.replace('/')
-  }
+  // onSuccess = jwtToken => {
+  //   const {history} = this.props
+  //   Cookies.set('jwt_token', jwtToken, {expires: 30})
+  //   history.replace('/')
+  // }
 
-  onFailure = errorMsg => {
-    this.setState({
-      showErrorMsg: true,
-      errorMsg,
-    })
-  }
+  // onFailure = errorMsg => {
+  //   this.setState({
+  //     showErrorMsg: true,
+  //     errorMsg,
+  //   })
+  // }
 
   onSubmitForm = async event => {
     event.preventDefault()
     const {username, password} = this.state
     const userDetails = {username, password}
-    const options = {
-      method: 'POST',
-      body: JSON.stringify(userDetails),
-    }
-    const apiLoginUrl = 'https://apis.ccbp.in/login'
-    const response = await fetch(apiLoginUrl, options)
-    const data = await response.json()
-    if (response.ok === true) {
-      this.onSuccess(data.jwt_token)
-    } else {
-      this.onFailure(data.error_msg)
-    }
+    const {history} = this.props
+    history.replace('/')
+    // const options = {
+    //   method: 'POST',
+    //   body: JSON.stringify(userDetails),
+    // }
+    // const apiLoginUrl = 'https://apis.ccbp.in/login'
+    // const response = await fetch(apiLoginUrl, options)
+    // const data = await response.json()
+    // if (response.ok === true) {
+    //   this.onSuccess(data.jwt_token)
+    // } else {
+    //   this.onFailure(data.error_msg)
+    // }
+    
   }
 
   onChangeUsername = event => {
